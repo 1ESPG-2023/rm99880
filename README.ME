@@ -1,0 +1,3 @@
+### Exercitando o Versionamento 
+
+-1) Integrando repositórios [LOCAIS E REMOTOS]...
