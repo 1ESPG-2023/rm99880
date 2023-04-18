@@ -41,5 +41,9 @@ const liElementArray = [...liElementHtml]
 
 liElementArray.map((item,key)=>{
 
-    console.log(`${key+1} - ${item.textContent}`)
+    if(item.textContent == "item-39"){
+    
+        console.log(`${key+1} - ${item.textContent = "LOCALIZADO"}`)
+    }
 })
+
