@@ -48,11 +48,22 @@
 // })
 
 
-function soma(parametro) {
-    nr1 = 10;
-    nr2 = 5;
-    console.log(`Resultado : ${parseInt(nr1) + parseInt(nr2) + parseInt(parametro)}`);
-    console.log(`Este é o parâmetro que foi passado: ${parametro}`)
+
+// function soma(p1,p2,p3) {
+//     nr1 = p1;
+//     nr2 = p2;
+
+//     return (parseInt(nr1) + parseInt(nr2) + parseInt(p3))
+
+    // console.log(`Resultado : ${parseInt(nr1) + parseInt(nr2) + parseInt(parametro)}`);
+    // console.log(`Este é o parâmetro que foi passado: ${parametro}`)
+// }
+
+
+
+
+//ARROW FUNCTION
+const mudaCor =  ()=>{
+    
 }
 
-soma();
