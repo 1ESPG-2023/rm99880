@@ -64,6 +64,10 @@
 
 //ARROW FUNCTION
 const mudaCor =  ()=>{
-    
+
+    //Função SET-TIME-OUT
+    setTimeout(soma(1,2,3), 5000)
+
 }
 
+mudaCor();
