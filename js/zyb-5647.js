@@ -55,19 +55,43 @@
 
 //     return (parseInt(nr1) + parseInt(nr2) + parseInt(p3))
 
-    // console.log(`Resultado : ${parseInt(nr1) + parseInt(nr2) + parseInt(parametro)}`);
-    // console.log(`Este é o parâmetro que foi passado: ${parametro}`)
+//     console.log(`Resultado : ${parseInt(nr1) + parseInt(nr2) + parseInt(parametro)}`);
+//     console.log(`Este é o parâmetro que foi passado: ${parametro}`)
 // }
 
 
 
 
-//ARROW FUNCTION
-const mudaCor =  ()=>{
+// //ARROW FUNCTION
+// const mudaCor =  ()=>{
 
-    //Função SET-TIME-OUT
-    setTimeout(soma(1,2,3), 5000)
+//     //Função SET-TIME-OUT
+//     setTimeout(soma(1,2,3), 5000)
 
+// }
+
+// mudaCor();
+
+function mudaCor() {
+
+    let r = "";
+    let g = "";
+    let b = "";
+
+
+    //random = Gera números aleatórios entre 0 e 1
+    //ceil, floor e round que arredondam o número para cima, para baixo ou aleatoriamente.
+    
+    //Determinando para as variáveis r,g e b um valor entre 0 e 255.
+    r = Math.round(Math.random() * 255);
+    g = Math.round(Math.random() * 255);
+    b = Math.round(Math.random() * 255);
+
+
+    const cabecalho = document.querySelector(".cabecalho");
+    cabecalho.setAttribute("style", `background-color:rgb(${r},${g},${b})`);
+
+    console.log(r,g,b);
 }
 
 mudaCor();
