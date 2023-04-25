@@ -72,26 +72,46 @@
 
 // mudaCor();
 
-function mudaCor() {
+// let tmp = ""
 
-    let r = "";
-    let g = "";
-    let b = "";
+// function mudaCor() {
+
+//     let r = "";
+//     let g = "";
+//     let b = "";
 
 
-    //random = Gera números aleatórios entre 0 e 1
-    //ceil, floor e round que arredondam o número para cima, para baixo ou aleatoriamente.
+//     //random = Gera números aleatórios entre 0 e 1
+//     //ceil, floor e round que arredondam o número para cima, para baixo ou aleatoriamente.
     
-    //Determinando para as variáveis r,g e b um valor entre 0 e 255.
-    r = Math.round(Math.random() * 255);
-    g = Math.round(Math.random() * 255);
-    b = Math.round(Math.random() * 255);
+//     //Determinando para as variáveis r,g e b um valor entre 0 e 255.
+//     r = Math.round(Math.random() * 255);
+//     g = Math.round(Math.random() * 255);
+//     b = Math.round(Math.random() * 255);
 
 
-    const cabecalho = document.querySelector(".cabecalho");
-    cabecalho.setAttribute("style", `background-color:rgb(${r},${g},${b})`);
+//     const cabecalho = document.querySelector(".cabecalho");
 
-    console.log(r,g,b);
+//     cabecalho.setAttribute("style", `background-color:rgb(${r},${g},${b})`);
+
+//     tmp = setTimeout(mudaCor, 150)
+
+//     console.log(r,g,b);
+// }
+
+// mudaCor();
+
+
+
+//COMEÇANDO O EXERCICIO
+//FUNÇÃO ALTERA BANNER
+
+function alteraBanner() {
+
+    let nr = Math.round(Math.random() * 3);
+
+    let caminho = `./img/banner-lateral-${nr}.png`;
+
+    const img1 = document.querySelector(".l-e > img");
+    img1.src = caminho;
 }
-
-mudaCor();
