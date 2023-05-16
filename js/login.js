@@ -1,8 +1,8 @@
-//Gerando dois objetos no LOCALSTORAGE
 
+//GERANDO DOIS OBJETOS NO LOCALSTORAGE
 const usuario1 = {
     nomeUsuario:"predo",
-    senhaUsuario:"1234"
+    senhaUsuario:"12345"
 }
 
 const usuario2 = {
@@ -14,15 +14,16 @@ let listaDeUsuarios = [];
 listaDeUsuarios.push(usuario1);
 listaDeUsuarios.push(usuario2);
 
-localStorage.setItem("listaUser", JSON.stringify(listaDeUsuarios));
+localStorage.setItem("listaUser",  JSON.stringify(listaDeUsuarios));
 
 
-//Vamos criar um objeto para armazenar o nosso usuário
-
+//VAMOS CRIAR UM OBJETO PARA ARMAZENAR O NOSSO USUÁRIO
 // const usuario = {
 //     nomeUsuario:"",
 //     senhaUsuario:""
 // }
+
+
 
 addEventListener("click",(evento)=>{
 
@@ -31,31 +32,35 @@ addEventListener("click",(evento)=>{
     if(evento.target.id == "btnSubmit"){
         // let usuario = document.querySelector("#idUser").value;
         // let senha = document.querySelector("#idPass").value;
-
-        //Recuperando dos inputs
+       
+        // RECUPERANDO DOS IMPUTS
         let inputUserValue = document.querySelector("#idUser").value;
         let inputPassValue = document.querySelector("#idPass").value;
-
-        const h1Titulo = document.querySelector("#titulo");
         
+        const h1Titulo = document.querySelector("#titulo");
+
         let lista = JSON.parse(localStorage.getItem("listaUser"));
+        
+        try{
+            lista.forEach((usuario)=> {
+                //VALIDAÇÃO
+                if(inputUserValue == usuario.nomeUsuario && inputPassValue == usuario.senhaUsuario){
+                throw "VALIDADO";
+                }
+            });
 
-        lista.forEach((usuario)=>{
-            //VALIDAÇÃO
-            if(inputUserValue == usuario.nomeUsuario && inputPassValue == usuario.senhaUsuario){
-                console.log("VALIDADO!");
-                h1Titulo.innerHTML = "Bem vindo : " + usuario.nomeUsuario;
-                return;
+                throw "NÃO VALIDADO";
+
+        }catch(msg){
+            if(msg == "VALIDADO"){
+                console.log("VALIDADO");
+                h1Titulo.innerHTML = "<span><strong>Login validado com sucesso!</strong></span>"
+                h1Titulo.setAttribute("style", "color: #00ff00;")
             }else{
-                console.log("NÃO VALIDOU!");
-                h1Titulo.innerHTML = "";
-                return;
+                console.log("NÃO VALIDADO");
+                h1Titulo.innerHTML = "<span><strong>Login ou senha inválidos!</strong></span>"
+                h1Titulo.setAttribute("style", "color: #ff0000;")
             }
-        });
-
-
-
-
+        }       
     }
-
 });
