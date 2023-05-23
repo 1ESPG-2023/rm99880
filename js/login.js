@@ -92,7 +92,10 @@ addEventListener("click",(evento)=>{
             }else{
                 h1Titulo.innerHTML = "<span><strong>Login ou senha inválidos!</strong></span>";
                 h1Titulo.setAttribute("style","color:#ff0000;");
-                window.location.href = "../erro.html";
+                setTimeout(()=>{
+                    //Direcionando o usuário para a página de erro!
+                    window.location.href = "../erro.html";
+                }, 3000);
             }
         }       
     }
